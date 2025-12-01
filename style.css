@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Cormorant Garamond", serif;
+    background: #f8f5e7; 
+    color: #2c2c2c;
+}
+
+header {
+    background: #1f2a44;
+    color: #f3d98c;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 4px solid #d4b363;
+}
+
+header h1 {
+    font-family: "Cinzel", serif;
+    margin: 0;
+    font-size: 2.7rem;
+    letter-spacing: 3px;
+}
+
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #fffdf6;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.17);
+    border: 2px solid #e1d2b8;
+}
+
+.card h2 {
+    font-family: "Cinzel", serif;
+    color: #1f2a44;
+    letter-spacing: 1px;
+}
+
+#question {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+#answers button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    border: 2px solid #d4b363;
+    border-radius: 10px;
+    background: #f8f1de;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: "Cormorant Garamond", serif;
+}
+
+#answers button:hover {
+    background: #f1e3c2;
+    transform: scale(1.02);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    margin-top: 10px;
+    background: #1f2a44;
+    color: #f3d98c;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Cinzel", serif;
+}
+
+button.hidden {
+    display: none;
+}
