@@ -83,3 +83,39 @@ button {
 button.hidden {
     display: none;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+    font-family: "Cinzel", serif;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 2px solid #b8a27c;
+    background: #f8f1de;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f2a44;
+    color: #f3d98c;
+    margin-top: 40px;
+    font-family: "Cinzel", serif;
+    border-top: 4px solid #d4b363;
+}
+
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
