@@ -86,8 +86,6 @@ let currentQuestion = 0
 let finalScore = 0
 let usedQuestions = []
 
-// have to add the listener for submitting the new question in form !
-
 start.addEventListener("click", startTrivia);
 
 function startTrivia(){
@@ -160,7 +158,7 @@ function endTrivia(){
     start.classList.remove("hidden")
 
     score.classList.remove("hidden");
-    score.textContent = `You answered ${finalScore} out of ${questions.length} correctly!`
+    score.textContent = `You answered ${finalScore} / ${questions.length} questions correctly!`
 }
 
 const form = document.getElementById("question_form")
@@ -174,8 +172,8 @@ form.addEventListener("submit", (e) =>{
 
     let new_question = {
         question: newQuestion,
-        answers: newAnswers,
-        correct: newCorrect
+        answers: newAnswers.map(a => a.trim()),
+        correct: newCorrect.trim()
     }
 
     questions.push(new_question);
