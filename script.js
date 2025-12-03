@@ -82,3 +82,35 @@ const start = document.getElementById("start");
 const next = document.getElementById("next");
 const score = document.getElementById("score");
 
+let currentQuestion = 0
+let finalScore = 0
+let usedQuestions = []
+
+//have to create a random questions func, a next question func, a check answer func, a start game func and end game func
+
+start.addEventListener("click", startTrivia);
+
+function startTrivia(){
+    finalScore = 0
+    usedQuestions = []
+    start.classList.add("hidden")
+    next.classList.remove("hidden")
+    score.classList.add("hidden")
+
+    nextQuestion(); //call the next question func here when created
+}
+
+function randomQuestion() {
+    if (usedQuestions.length == questions.length){
+        return null;
+    }
+
+    let index;
+
+    do{
+        index.Math.floor(Math.random() * questions.length);
+    } while (usedQuestions.includes(index))
+    
+    usedQuestions.push(index);
+    return questions[index]
+}
