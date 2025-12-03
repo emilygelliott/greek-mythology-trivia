@@ -163,5 +163,27 @@ function endTrivia(){
     score.textContent = `You answered ${finalScore} out of ${questions.length} correctly!`
 }
 
+const form = document.getElementById("question_form")
+
+form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+
+    let newQuestion = document.getElementById("new_question").value 
+    let newAnswers = document.getElementById("new_answers").value.split(",")
+    let newCorrect = document.getElementById("new_correct_answer").value 
+
+    let new_question = {
+        question: newQuestion,
+        answers: newAnswers,
+        correct: newCorrect
+    }
+
+    questions.push(new_question);
+
+    form.reset();
+
+    alert("You have successfully added a new question to the trivia!")
+});
+
 
 
