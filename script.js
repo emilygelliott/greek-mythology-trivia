@@ -26,7 +26,7 @@ let questions = [
     },
     {
         question: "What creature is half-man, half-bull?",
-        answers: ["Minotaur", "Scylla", "", "Centaur", "Cyclops"],
+        answers: ["Minotaur", "Scylla", "Centaur", "Cyclops"],
         correct: "Minotaur"
     },
     {
@@ -136,4 +136,32 @@ function nextQuestion(){
         answers.appendChild(btn);
     })
 }
+
+function checkAnswer(answer){
+    if (answer == currentQuestion.correct){
+        finalScore ++;
+        question.textContent = "Correct!"
+    } else {
+        question.textContent = "Incorrect..."
+    } 
+
+    Array.from(answers.children).forEach(btn =>{
+        btn.disabled = true
+        btn.style.opacity = 0.6
+    })
+}
+
+next.addEventListener("click", nextQuestion)
+
+function endTrivia(){
+    question.textContent = "🌿 Your Results 🌿"
+    answers.innerHTML = "";
+    next.classList.add("hidden")
+    start.classList.remove("hidden")
+
+    score.classList.remove("hidden");
+    score.textContent = `You answered ${finalScore} out of ${questions.length} correctly!`
+}
+
+
 
