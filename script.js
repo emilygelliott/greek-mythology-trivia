@@ -86,7 +86,7 @@ let currentQuestion = 0
 let finalScore = 0
 let usedQuestions = []
 
-//have to create a random questions func, a next question func, a check answer func, a start game func and end game func
+//have to create a check answer func, and end game func & have to add the listener for submitting the new question in form !
 
 start.addEventListener("click", startTrivia);
 
@@ -97,7 +97,7 @@ function startTrivia(){
     next.classList.remove("hidden")
     score.classList.add("hidden")
 
-    nextQuestion(); //call the next question func here when created
+    nextQuestion();
 }
 
 function randomQuestion() {
@@ -114,3 +114,25 @@ function randomQuestion() {
     usedQuestions.push(index);
     return questions[index]
 }
+
+function nextQuestion(){
+    answers.innerHTML = "";
+
+    let q = randomQuestion();
+
+    if (!q){
+        endTrivia(); // make end trivia func !! end if no more ques
+        return;
+    }
+
+    currentQuestion = q
+
+    question.textContent = q.question
+
+    q.answers.forEach(answer => {
+        let btn = document.createElement("button");
+        btn.addEventListener("click", () => checkAnswer(answer)); // create check answer func 
+        answers.appendChild(btn);
+    })
+}
+
