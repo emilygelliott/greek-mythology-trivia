@@ -1,3 +1,5 @@
+let questionsTrivia = 10;
+
 let questions = [
     {
         question: "Who is the king of the greek gods?",
@@ -99,7 +101,7 @@ function startTrivia(){
 }
 
 function randomQuestion() {
-    if (usedQuestions.length == questions.length){
+    if (usedQuestions.length == questionsTrivia){
         return null;
     }
 
@@ -158,7 +160,7 @@ function endTrivia(){
     start.classList.remove("hidden")
 
     score.classList.remove("hidden");
-    score.textContent = `You answered ${finalScore} / ${questions.length} questions correctly!`
+    score.textContent = `You answered ${finalScore} / ${questionsTrivia} questions correctly!`
 }
 
 const form = document.getElementById("question_form")
