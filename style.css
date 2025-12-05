@@ -19,6 +19,25 @@ header {
     border-bottom: 4px solid #d4b363;
     text-transform:uppercase;
     font-weight:bold;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+}
+
+.header_text{
+    text-align:center;
+}
+
+.header_zeus{
+    width:90px;
+    height:auto;
+}
+
+.header_athena{
+    width:150px;
+    height:auto;
 }
 
 header h1 {
